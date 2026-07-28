@@ -1,0 +1,12 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Local scratch (never commit secrets or raw inventories)
+*.local.md
+.env
+.env.*
