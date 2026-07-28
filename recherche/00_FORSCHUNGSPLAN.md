@@ -15,6 +15,8 @@
 | Vollständigkeitskritik | (im Sweep) | `00_KRITIK_UND_LUECKEN.md` — 4 Konfliktlinien, Abdeckungslücken, Prio-Plan |
 | Konsolidierungslauf (Prio 1–8 der Kritik) | 6 | Addenda `04a`, `17`–`20` + **Gesamtsynthese v2** (`00_SYNTHESE.md`, Konflikte entschieden) |
 | **Tranche 1: Operating Model** (Auftrag § 14) | 6 | 3 konkurrierende Entwürfe + 2 Gutachten + **`tranche1/OPERATING_MODEL_REFERENZMODELL.md` (v1.0-Entwurf)** |
+| Eigentümerentscheidungen (interaktiv, 28.07.) | — | **OE-1 bis OE-12 beschlossen** (`tranche1/ENTSCHEIDUNGSPROTOKOLL_OE.md`); inkl. OE-12 Deterministik-first K0–K2 (`21_runtime_llm_klassifikation.md`) |
+| v4.1-Einarbeitung (2 Editoren + unabh. Review + Korrektur) | 4 | **`methodik/`: KI_ENGINEERING_METHODIK.md v4.1, AGENTS.md-Vorlage, CLAUDE.md-Brücke** (1 wichtiger + 5 geringe Review-Befunde, alle behoben) |
 
 Gesamtvolumen: ~35 Agenten-Läufe, ~430 geprüfte Quellen, ~4,8 Mio. verarbeitete Tokens, ein abgefangener Session-Limit-Abbruch (sauber per Resume fortgesetzt — Kostenmodell-Fallstudie in Dossier 19).
 
@@ -35,12 +37,12 @@ Quellenstatus [V]/[S] mit Abrufdatum; Bewertungsskala nach Auftrag § 8; Benchma
 
 ## 4. Nächste Schritte
 
-**Beim Eigentümer (Andreas):** Sichtung des Referenzmodells, insbesondere der elf offenen Eigentümerentscheidungen **OE-1 bis OE-11** (M2-Lockerung, Boxscore-Promotion, Serverrollen Heimserver/VPS, Routines-Pilot, Held-out-Ablage, WIP-Limit, Autonomie-Startwerte, Kostenrahmen, Profil-Defaults, AGENTS.md-Umstellung, A3-Vorabfreigaben).
+**Entschieden (28.07., interaktive Session):** OE-1 bis OE-12 — mit zwei bewussten Abweichungen von den Empfehlungen (OE-1: M2 unattended in WSL2-Sandbox sofort erlaubt, mit blockierenden Voraussetzungen; OE-3: EliteDesk wird neues Produktionsziel). **Erledigt:** v4.1-Delta eingearbeitet (`methodik/`), OE-12 integriert (Methodik 12.5, SPEC-Pflichtfeld, AGENTS.md § 8).
 
-**Danach mögliche Folgearbeiten (offen, nicht beauftragt):**
+**Folgearbeiten (offen):**
 
-1. Einarbeitung des v4.1-Delta-Pakets in `KI_ENGINEERING_METHODIK.md` und `CLAUDE.md` (nach OE-Entscheidungen)
-2. Ops-Pilot Stufe 0 auf dem Heimserver (read-only Ops-Agent gemäß Dossier 16 + Windows-Matrix, nach OE-3)
+1. Physische Umsetzung beim Eigentümer: WSL2+Sandbox einrichten und negativ testen (Voraussetzung OE-1/OE-11); Kostenschalter setzen (OE-8); Bestandsrepos auf AGENTS.md-Brücke umstellen (OE-10, agentengestützter Lauf möglich)
+2. Ops-Pilot Stufe 0 auf dem EliteDesk (read-only Ops-Agent gemäß Dossier 16, Methodik 25.9) und Migrationsvorhaben VPS → Heimserver aufsetzen (OE-3, Phase 0 = Inventar-Backlog)
 3. Offene Beschaffungen aus der Kritik: gated Primärdokumente (DORA-Vollreport, CISA, OWASP-PDF, EN-301-549-Zeitplan), Merge-Konflikt-Empirie
 4. Beobachtungsliste: MCP-Release-Vollzug (täglich → wöchentlich), METR-Fixed-Task-Studien H2/2026, Stack-Overflow-Survey 2026, Veracode-Folgeupdate
 5. Tranchen 2–6 des Forschungsauftrags (Toolchain-Referenzarchitektur, Quality Engineering, Daten/Ontologien, Experience, Gesamtmethodik) — Tranche 2 ist durch Dossiers 06/14/15/16/19/20 bereits stark vorbereitet
