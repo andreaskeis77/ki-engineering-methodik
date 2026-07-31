@@ -1,7 +1,7 @@
 # Forschungsplan — KI-native Software- und Systems-Engineering-Methodik
 
-**Stand:** 2026-07-28 (Abend) — **Lauf 1, Ergänzungslauf, Konsolidierung und Tranche 1 abgeschlossen**
-**Basis:** Forschungsauftrag (Zielbild-Dokument), Methodik v4.0, Analyse/Refactoring v4, Recherche-Kompendium, GitHub-Portfolio-Analyse, Heimserver-Inventar
+**Stand:** 2026-07-30 — **Lauf 1, Ergänzungslauf, Konsolidierung und Tranche 1 abgeschlossen; Heimserver-Ist-Stand nachgeführt**
+**Basis:** Forschungsauftrag (Zielbild-Dokument), Methodik v4.0, Analyse/Refactoring v4, Recherche-Kompendium, GitHub-Portfolio-Analyse, Heimserver-Inventar, As-built `HOME-SRV01` (30.07.)
 **Abgestimmt mit Andreas am:** 2026-07-28 (Scope: Sweep + Tranche-1-Tiefe · Ablage: Claude-Projekt + Downloads · Format: Dossiers + Synthese)
 
 ---
@@ -23,10 +23,14 @@ Gesamtvolumen: ~35 Agenten-Läufe, ~430 geprüfte Quellen, ~4,8 Mio. verarbeitet
 ## 2. Ablagestruktur im Claude-Projekt
 
 ```
-input/       — 7 Ausgangsdokumente (6 von Andreas + Heimserver-Inventar HP EliteDesk 800 G6)
+input/       — 8 Ausgangsdokumente (6 von Andreas + Heimserver-Inventar HP EliteDesk 800 G6
+               + As-built HOME-SRV01 vom 30.07.2026)
 recherche/   — 00_FORSCHUNGSPLAN, 00_SYNTHESE (v2), 00_KRITIK_UND_LUECKEN,
-               Dossiers 01–16, Addenda 04a + 17–20
-recherche/tranche1/ — 3 Entwürfe, 2 Gutachten, OPERATING_MODEL_REFERENZMODELL (v1.0-Entwurf)
+               Dossiers 01–16, Addenda 04a + 17–21
+recherche/tranche1/ — 3 Entwürfe, 2 Gutachten, OPERATING_MODEL_REFERENZMODELL (v1.0-Entwurf),
+               ENTSCHEIDUNGSPROTOKOLL_OE (OE-1 bis OE-12)
+methodik/    — geltende Fassung v4.1: KI_ENGINEERING_METHODIK.md, AGENTS.md, CLAUDE.md-Brücke,
+               runbooks/ (WSL2-Sandbox), infrastruktur/ (HOME-SRV01_STATUS)
 ```
 
 Lokal zusätzlich: `00_SYNTHESE_v1_basis13.md` (archivierte Erstsynthese, Provenance).
@@ -39,10 +43,12 @@ Quellenstatus [V]/[S] mit Abrufdatum; Bewertungsskala nach Auftrag § 8; Benchma
 
 **Entschieden (28.07., interaktive Session):** OE-1 bis OE-12 — mit zwei bewussten Abweichungen von den Empfehlungen (OE-1: M2 unattended in WSL2-Sandbox sofort erlaubt, mit blockierenden Voraussetzungen; OE-3: EliteDesk wird neues Produktionsziel). **Erledigt:** v4.1-Delta eingearbeitet (`methodik/`), OE-12 integriert (Methodik 12.5, SPEC-Pflichtfeld, AGENTS.md § 8).
 
+**Zwischenstand 30.07.2026 — Heimserver:** Der EliteDesk wurde sauber neu aufgesetzt und als `HOME-SRV01` in Betrieb genommen (BitLocker beidseitig, TPM/Secure Boot, Rollentrennung `srvuser`/`srvadmin`, Tailscale unattended, RDP ausschließlich über Tailscale mit bestandenem Negativtest). Damit sind vier Punkte der OE-3-Phase 0 geschlossen. **Nicht** umgesetzt sind WSL2/Docker und jedes Backup — beide Lücken sind blockierend, siehe unten. Ist-Stand und Freigabegrenzen: `methodik/infrastruktur/HOME-SRV01_STATUS.md`.
+
 **Folgearbeiten (offen):**
 
-1. Physische Umsetzung beim Eigentümer: WSL2+Sandbox einrichten und negativ testen (Voraussetzung OE-1/OE-11); Kostenschalter setzen (OE-8); Bestandsrepos auf AGENTS.md-Brücke umstellen (OE-10, agentengestützter Lauf möglich)
-2. Ops-Pilot Stufe 0 auf dem EliteDesk (read-only Ops-Agent gemäß Dossier 16, Methodik 25.9) und Migrationsvorhaben VPS → Heimserver aufsetzen (OE-3, Phase 0 = Inventar-Backlog)
+1. Physische Umsetzung beim Eigentümer: WSL2+Sandbox einrichten und negativ testen (Voraussetzung OE-1/OE-11) — auf `HOME-SRV01` zusätzlich vorgelagert die BIOS-Prüfung VT-x/VT-d; Kostenschalter setzen (OE-8); Bestandsrepos auf AGENTS.md-Brücke umstellen (OE-10, agentengestützter Lauf möglich)
+2. Ops-Pilot Stufe 0 auf `HOME-SRV01` (read-only Ops-Agent gemäß Dossier 16, Methodik 25.9) — setzt das Kompensationspaket K+P+H+E+C voraus (Dienstkonto `svc-claude`, NTFS-ACLs, read-only-DB-Rollen, Kill-File-/Audit-Hook, Egress-Firewall), das noch fehlt. Migrationsvorhaben VPS → Heimserver (OE-3) bleibt bis zur ersten bestandenen Restore-Probe gesperrt (Backup-Gate Methodik 25.5)
 3. Offene Beschaffungen aus der Kritik: gated Primärdokumente (DORA-Vollreport, CISA, OWASP-PDF, EN-301-549-Zeitplan), Merge-Konflikt-Empirie
 4. Beobachtungsliste: MCP-Release-Vollzug (täglich → wöchentlich), METR-Fixed-Task-Studien H2/2026, Stack-Overflow-Survey 2026, Veracode-Folgeupdate
 5. Tranchen 2–6 des Forschungsauftrags (Toolchain-Referenzarchitektur, Quality Engineering, Daten/Ontologien, Experience, Gesamtmethodik) — Tranche 2 ist durch Dossiers 06/14/15/16/19/20 bereits stark vorbereitet
