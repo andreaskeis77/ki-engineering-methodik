@@ -2709,9 +2709,10 @@ Operative Zugänge und Netzwerkhärtung sind plattformspezifische Profile. Least
 
 ### 25.8 SRE light und Serverrollen
 
-**Serverrollen (OE-3, Eigentümerentscheidung vom 2026-07-28):** Der Heimserver **HP EliteDesk 800 G6** (i5-10500T 6C/12T, 32 GB, 2×512 GB NVMe, Windows 11 Pro, WSL2-fähig; **kein ECC, kein RAID → Backup-Disziplin ist die Redundanz**, 25.5; D: als Daten-/Backup-Laufwerk) wird **neues Produktionsziel**. Konsequenzen:
+**Serverrollen (OE-3, Eigentümerentscheidung vom 2026-07-28):** Der Heimserver **HP EliteDesk 800 G6**, seit dem 2026-07-30 in Betrieb als **`HOME-SRV01`** (i5-10500T 6C/12T, 32 GB, 2×512 GB NVMe, Windows 11 Pro; **kein ECC, kein RAID → Backup-Disziplin ist die Redundanz**, 25.5; D: `DATA` als Daten-/Backup-Laufwerk) wird **neues Produktionsziel**. Gepflegter Ist-Zustand samt Freigabegrenzen: `methodik/infrastruktur/HOME-SRV01_STATUS.md`. Konsequenzen:
 
-- Das `server-migration`-Vorhaben wird als **„VPS → Heimserver“-Migration** fortgesetzt (statt VPS → Linux), als eigenes Vorhaben mit Phasenplan; **Phase 0 ist das Inventar-Backlog** aus dem Heimserver-Steckbrief: SMART-Prüfung, BIOS/VT-x, LAN-Kabel statt WLAN, Tailscale, Energie-/Autostart-Profil.
+- Das `server-migration`-Vorhaben wird als **„VPS → Heimserver“-Migration** fortgesetzt (statt VPS → Linux), als eigenes Vorhaben mit Phasenplan; **Phase 0 ist das Inventar-Backlog** aus dem Heimserver-Steckbrief: SMART-Prüfung, BIOS/VT-x, LAN-Kabel statt WLAN, Tailscale, Energie-/Autostart-Profil. Stand 2026-07-30 sind Tailscale, Energieprofil, BIOS-Version und die Rollenfrage geschlossen; **SMART, VT-x/VT-d und LAN-Kabel bleiben offen**.
+- **Zwei Sperren gelten bis auf Weiteres (Stand 2026-07-30):** (1) Auf `HOME-SRV01` ist **kein WSL2 installiert** — damit gibt es dort keine W3-Umgebung (22.10), und OE-1/OE-11 sind auf diesem Gerät unwirksam; Freigaben sind gerätegebunden. (2) Es existiert **kein Backup und keine Restore-Probe** — das A5-Gate aus 25.5 ist zu, der Server darf kein System-of-Record für migrierte Projekte werden.
 - Der **Windows-VPS bleibt bis zum vollzogenen Umzug unverändert produktiv**; auf ihm werden keine neuen Betriebsexperimente begonnen.
 - **Kein Parallelbetrieb ohne System-of-Record-Regel:** Je Projekt ist während der Migration genau ein System als führend benannt (`project-state.yaml`); das andere ist Replikat/Kandidat ohne Schreib-Wahrheit (Prinzip „eine Wahrheit je Datensorte“, 13.1).
 - Der Ops-Agent-Pilot Stufe 0 (25.9) startet auf dem EliteDesk und wächst mit dem Aufbau mit.
