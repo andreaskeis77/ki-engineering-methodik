@@ -4,6 +4,25 @@
 **Quelle:** Bestandsaufnahme durch Andreas (Hardware-Inventarisierung), redaktionell strukturiert
 **Zweck:** Referenzdokument für den Forschungsauftrag — dieser Server ist das Zielsystem für den geplanten agentengestützten Betrieb (Server-Steuerung, DB-Administration, Automatisierung; vgl. Dossier 16 und Windows-Autonomie-Matrix)
 
+> ### ⚠ Teilweise überholt (Stand 2026-07-30)
+>
+> Am **30.07.2026** wurde die Maschine **komplett neu aufgesetzt** und in Betrieb genommen. Maßgeblich für Betriebssystem, Konten, Netzwerk, Fernzugriff und Verschlüsselung ist seitdem die As-built-Dokumentation **[`HOME-SRV01_EINRICHTUNG_UND_BETRIEB_2026-07-30.md`](HOME-SRV01_EINRICHTUNG_UND_BETRIEB_2026-07-30.md)**. Den gepflegten Ist-Status samt Methodik-Bezug führt **[`methodik/infrastruktur/HOME-SRV01_STATUS.md`](../methodik/infrastruktur/HOME-SRV01_STATUS.md)**.
+>
+> **Weiterhin gültig in diesem Dokument:** die Hardware-Detailinventur (Kapitel 3), die Bewertung als Heimserver (Kapitel 4) und die Einordnung für Methodik und Forschungsauftrag (Kapitel 5) — mit der Einschränkung, dass die dort erwähnte WSL2-Fähigkeit weiterhin nur *möglich*, aber **nicht umgesetzt** ist.
+>
+> **Überholt:**
+>
+> | Angabe hier (28.07.) | Ist-Zustand (30.07.) |
+> |---|---|
+> | Computername `DESKTOP-1TH69EV` | `HOME-SRV01` (Tailscale-Hostname `home-srv01`) |
+> | Windows installiert 17.08.2025 (Refurbisher-Zustand) | Windows 11 Pro am 30.07.2026 sauber neu installiert, Refurbisher-Zustand verworfen |
+> | Hauptkonto `PC` (lokaler Administrator) | Rollentrennung: `srvuser` (Standard + RDP), `srvadmin` (lokaler Admin), `andre` (Notfall); builtin `Administrator` deaktiviert |
+> | C: ~73 GB belegt / D: praktisch leer | Datenträgerlayout unverändert, aber **beide SSDs BitLocker-verschlüsselt** (XTS-AES 128), D: mit Auto-Unlock |
+> | Secure-Boot-/TPM-Status nicht erhoben | TPM aktiv (IFX 7.85.4555.0), Secure Boot aktiviert |
+> | Tailscale-Status offen | Tailscale installiert, unattended, Key-Expiry deaktiviert; RDP **ausschließlich** über Tailscale, Heimnetz-Zugriff negativ getestet |
+> | Energie-/Autostart-Profil offen | Standby und Ruhezustand deaktiviert (24/7); automatisches Einschalten nach Stromausfall weiterhin nicht konfiguriert |
+> | BIOS-Version offen | HP BIOS 02.26.00 vom 04.05.2026; **VT-x/VT-d-Status weiterhin offen** |
+
 ---
 
 ## 1. Kurzprofil
@@ -82,6 +101,8 @@ Aktuell angeschlossen: USB-Stick 8 GB (E:, exFAT) — kein Teil der Serverkapazi
 5. **Mobile Steuerung:** Pixel 8 + Claude Remote Control / GitHub Mobile deckt das Freigabe-unterwegs-Modell ab (Freigeben/Reviewen/Stoppen ja, destruktive Aktionen nie — Asymmetrie-Prinzip aus der Synthese).
 
 ## 6. Offene Punkte (Inventar-Backlog)
+
+> **Fortgeschrieben:** Dieser Backlog ist per OE-3 die Phase 0 des Migrationsvorhabens „VPS → Heimserver". Der 30.07. hat vier der sieben Punkte geschlossen. Der gepflegte, aktuelle Stand steht in [`methodik/infrastruktur/HOME-SRV01_STATUS.md`](../methodik/infrastruktur/HOME-SRV01_STATUS.md); die Liste hier ist der Stand vom 28.07.
 
 - Vollständiger SMART-Test beider SSDs (Verschleiß, Betriebsstunden, Temperatur)
 - Ethernet-Adapter inventarisieren und Server auf LAN-Kabel umstellen
