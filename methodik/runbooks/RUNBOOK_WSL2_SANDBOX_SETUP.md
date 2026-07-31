@@ -1,6 +1,7 @@
 # Runbook: WSL2 + Claude-Code-Sandbox einrichten (W3-Venue für unbeaufsichtigte Schreibläufe)
 
-**Version:** 1.0 · **Stand:** 2026-07-28 · **Status:** beschlossen (Reihenfolge: Latitude zuerst, dann EliteDesk; Egress minimal)
+**Version:** 1.1 · **Stand:** 2026-07-30 · **Status:** beschlossen (Reihenfolge: Latitude zuerst, dann `HOME-SRV01`; Egress minimal)
+**Changelog:** 1.1 (2026-07-30) — Zielserver auf `HOME-SRV01` benannt, Tokenname und Dienstkontohinweis präzisiert, Abschnitt I um den Ist-Stand ergänzt (WSL2 dort nicht installiert, VT-x/VT-d ungeprüft). · 1.0 (2026-07-28) — Erstfassung.
 **Zweck:** Schaltet OE-1 (M2 unattended in WSL2-Sandbox) und OE-11 (A3-Vorabfreigabe boxscore/new_nfl/tischatlas) physisch scharf — gemäß Windows-Autonomie-Matrix (Methodik 22.10). Ohne bestandene Negativtests (Abschnitt G) bleiben beide Beschlüsse ungenutzt.
 **Ausführung:** attended, mit Claude Code lokal als Assistent; jeder Block ist einzeln ausführbar. Dauer: ~1–2 h je Maschine.
 
@@ -11,7 +12,7 @@
 ## A. Voraussetzungen prüfen (Latitude)
 
 1. Windows 11, Adminrechte vorhanden.
-2. Virtualisierung aktiv: `systeminfo` → „Virtualisierungsbasierte Sicherheit"/Hyper-V-Anforderungen erfüllt, oder Task-Manager → Leistung → CPU → „Virtualisierung: Aktiviert". *(EliteDesk später: vorher im BIOS VT-x/VT-d prüfen — Inventar-Backlog Punkt 3.)*
+2. Virtualisierung aktiv: `systeminfo` → „Virtualisierungsbasierte Sicherheit"/Hyper-V-Anforderungen erfüllt, oder Task-Manager → Leistung → CPU → „Virtualisierung: Aktiviert". *(`HOME-SRV01` später: vorher im HP-BIOS VT-x/VT-d prüfen — Inventar-Backlog Punkt 5, Stand 2026-07-30 noch offen.)*
 3. Freier Speicher ≥ 20 GB.
 
 ## B. WSL2 + Ubuntu installieren
@@ -108,9 +109,11 @@ Jeden Test in einer Claude-Code-Session **im Sandbox-Profil** ausführen; erwart
 
 Kleiner, reversibler Auftrag im tischatlas-Klon (z. B. Doku-Tippfehler-Fix): Claude Code headless mit Run-Manifest starten, Ergebnis als Draft-PR, dann attended reviewen. Erst nach 2–3 sauberen Probeläufen echte nächtliche Aufträge planen (Scheduler-Zuordnung Methodik 11.8).
 
-## I. Übertrag auf den EliteDesk (nach OE-3-Phase 0)
+## I. Übertrag auf `HOME-SRV01` (nach OE-3-Phase 0)
 
-Gleiches Runbook, plus: BIOS-Check VT-x/VT-d **vorher**; eigenes Dienstkonto `svc-claude` statt persönlichem Konto; Token `agent-w3-elitedesk` separat (Geräte-Trennung); Negativtests vollständig wiederholen — Freigaben sind gerätegebunden, nicht übertragbar.
+Gleiches Runbook, plus: BIOS-Check VT-x/VT-d **vorher**; eigenes Dienstkonto `svc-claude` statt persönlichem Konto (nicht `srvadmin`, nicht `srvuser`); Token `agent-w3-home-srv01` separat (Geräte-Trennung); Negativtests vollständig wiederholen — Freigaben sind gerätegebunden, nicht übertragbar.
+
+> **Stand 2026-07-30:** Auf `HOME-SRV01` ist **kein WSL2 installiert** und der VT-x/VT-d-Status ist unbekannt. Bis dieser Abschnitt abgearbeitet und die Negativtests NT-1 bis NT-6 dort bestanden sind, gelten OE-1 (M2 unattended) und OE-11 (A3-Vorabfreigaben) auf diesem Gerät **nicht** — der Server bleibt W1/attended. Ausgangslage und Reihenfolge: `methodik/infrastruktur/HOME-SRV01_STATUS.md`.
 
 ---
 
