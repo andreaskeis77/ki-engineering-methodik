@@ -14,6 +14,15 @@
 
 Dieses Repository sammelt die Forschung zum Aufbau einer professionellen, KI-nativen Software- und Systems-Engineering-Methodik für private, anspruchsvolle Softwareprojekte: Ein menschlicher Chefarchitekt steuert Ziele, Anforderungen, Architektur und Freigaben; KI-Agenten analysieren, planen, implementieren, testen, dokumentieren und verbessern innerhalb klarer Leitplanken. Grundlage ist der Forschungsauftrag in `input/KI_native_Software_Engineering_Zielbild_und_Forschungsauftrag.md`.
 
+## Zwei Methodiken
+
+| | Wofür |
+|---|---|
+| `methodik/` — **Standard v4.1** | reife, kontrollierte Produktentwicklung: echte Nutzer, echte Daten, Betrieb |
+| `methodik-fasttrack/` — **Fast-Track v1.0** | unbewiesene Ideen: max. Geschwindigkeit und Autonomie bis zum MVP-Beweis, danach Härtung nach Standard oder Neubau (Prototyp = lebende Spezifikation) |
+
+Einstieg Fast-Track: `methodik-fasttrack/README.md` (inkl. Bootstrap-Skript für neue Projekte).
+
 ## Struktur
 
 ```

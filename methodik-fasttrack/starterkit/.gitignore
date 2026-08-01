@@ -1,0 +1,17 @@
+# Secrets - never in git (Fast-Track hard limit)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Local noise
+node_modules/
+__pycache__/
+.venv/
+venv/
+dist/
+build/
+*.log
+data/*.db
