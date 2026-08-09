@@ -24,6 +24,8 @@ Erst schnell und maximal autonom zu einem sehr guten MVP; wenn die Idee sich bew
 
 **Verhältnis zur Standard-Methodik:** Die Wahrheitshierarchie der v4.1 (Kap. 3.1) gilt unverändert — Recht, Plattformregeln und technisch erzwungene Sicherheitsgrenzen stehen über jeder Freigabe. Fast-Track ist eine dokumentierte Eigentümerentscheidung, die **prozessuale** Regeln der v4.1 für einen abgegrenzten Projekttyp lockert (Kapitel 10). Die **physisch, sicherheitlich oder rechtlich begründeten** Regeln der v4.1 gelten ungekürzt weiter (Kapitel 9).
 
+**Verhältnis zu Fachmethodiken:** Standard und Fast-Track sind Projektmethodiken und schließen einander aus, Fachmethodiken stehen quer dazu — sie gelten zusätzlich zur gewählten Projektmethodik und regeln, wie mit einem Gegenstand gearbeitet wird ([`../FACHMETHODIK.md`](../FACHMETHODIK.md)).
+
 ## 2. Geltungsbereich: wann Fast-Track, wann nicht
 
 Fast-Track gilt **nur** für Projekte, die alle vier Kriterien erfüllen:
