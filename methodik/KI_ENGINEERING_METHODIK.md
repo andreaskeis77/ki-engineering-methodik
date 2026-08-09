@@ -63,6 +63,8 @@ Diese Datei ist die konsolidierte Langmethodik für neue und bestehende KI-gest�
 
 Sie ist bewusst **werkzeugnah, aber nicht werkzeugabhängig**. Dauerhafte Prinzipien stehen im normativen Hauptteil. Claude-Code-Funktionen, Android-Versionen, Modellnamen, SDKs und Store-Vorgaben werden vor ihrer Nutzung anhand offizieller Primärquellen verifiziert.
 
+Sie ist eine **Projektmethodik** und beantwortet, wie viel Prozess ein Projekt braucht; **Fachmethodiken** stehen quer dazu, gelten zusätzlich und regeln, wie mit einem Gegenstand gearbeitet wird — siehe [`../FACHMETHODIK.md`](../FACHMETHODIK.md).
+
 ### 1.2 Zwei-Dateien-Modell
 
 | Datei | Aufgabe | Ladeverhalten |

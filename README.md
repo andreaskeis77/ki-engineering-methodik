@@ -14,7 +14,7 @@
 
 Dieses Repository sammelt die Forschung zum Aufbau einer professionellen, KI-nativen Software- und Systems-Engineering-Methodik für private, anspruchsvolle Softwareprojekte: Ein menschlicher Chefarchitekt steuert Ziele, Anforderungen, Architektur und Freigaben; KI-Agenten analysieren, planen, implementieren, testen, dokumentieren und verbessern innerhalb klarer Leitplanken. Grundlage ist der Forschungsauftrag in `input/KI_native_Software_Engineering_Zielbild_und_Forschungsauftrag.md`.
 
-## Zwei Methodiken
+## Zwei Projektmethodiken
 
 | | Wofür |
 |---|---|
@@ -22,6 +22,10 @@ Dieses Repository sammelt die Forschung zum Aufbau einer professionellen, KI-nat
 | `methodik-fasttrack/` — **Fast-Track v1.0** | unbewiesene Ideen: max. Geschwindigkeit und Autonomie bis zum MVP-Beweis, danach Härtung nach Standard oder Neubau (Prototyp = lebende Spezifikation) |
 
 Einstieg Fast-Track: `methodik-fasttrack/README.md` (inkl. Bootstrap-Skript für neue Projekte).
+
+## Fachmethodiken — die dritte Achse
+
+Projektmethodiken beantworten, *wie viel Prozess* ein Projekt braucht; man wählt genau eine, sie schließen einander aus. **Fachmethodiken** beantworten die andere Frage — *wie arbeitet man mit einem Gegenstand?* — und gelten **zusätzlich**, null bis mehrere je Projekt. Keine dritte Wahlmöglichkeit also, sondern eine Regelmenge, die man zu der gewählten Projektmethodik hinzunimmt. Die Achse, die Reifegradregel und der Rückweg ins Projekt stehen in [`FACHMETHODIK.md`](FACHMETHODIK.md); die erste Fachmethodik ist [`fachmethodik/quellenarbeit/`](fachmethodik/quellenarbeit/README.md) — heute ein Kapitelgerüst, entstanden aus dem Projekt `bismarck`.
 
 ## Struktur
 
@@ -35,6 +39,13 @@ methodik/               ★ die geltende Methodik (v4.1) — hier steht, was gil
   │    └─ RUNBOOK_BACKUP_RESTIC_HETZNER.md Offsite-Backup append-only, öffnet das A5-Gate (NT-B1..NT-B6)
   └─ infrastruktur/
        └─ HOME-SRV01_STATUS.md     ★ gepflegter Serverstatus + was er erlaubt/sperrt
+
+methodik-fasttrack/     die zweite Projektmethodik (Fast-Track v1.0) + Starterkit + Bootstrap-Skript
+
+FACHMETHODIK.md         ★ die dritte Achse: Fachmethodiken gelten zusätzlich zur Projektmethodik
+fachmethodik/           Fachmethodiken — entstehen aus Projekten, nie auf Vorrat
+  └─ quellenarbeit/
+       └─ README.md               Kapitelgerüst mit Reifegraden und Fallzahlen (aus bismarck)
 
 input/                  Ausgangskorpus (8 Dokumente)
   ├─ Forschungsauftrag, Methodik v4.0, CLAUDE.md-Vorlage,
