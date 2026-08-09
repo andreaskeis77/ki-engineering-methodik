@@ -85,7 +85,8 @@ Mehrstufige, oft wiederholte Abläufe können später als Skills umgesetzt werde
 ### 1.4 Sprachkonvention
 
 - Dokumentation, Planung und Kommunikation auf Deutsch.
-- Code, Identifier, Branches und Commit-Nachrichten auf Englisch.
+- Code, Identifier und Branches auf Englisch.
+- Commit-Nachrichten: Conventional-Commits-**Typ englisch**, **Betreff in der Projektsprache** — im Portfolio durchgängig Deutsch —, Umlaute und ß ASCII-transliteriert (`ae`, `oe`, `ue`, `ss`). Die Transliteration ist Absicht, kein Nachlassen: Windows PowerShell 5.1 zerlegt Umlaute in Commit-Nachrichten. *Korrigiert am 2026-08-09 an der gelebten Praxis; Begründung und Prüfnachweis in 2.7.*
 - Nutzertexte folgen der Produktsprache und dem Content-Design.
 
 ### 1.5 Schnellrouting
@@ -145,6 +146,7 @@ Die folgenden Prinzipien bleiben vollständig erhalten:
 | Keine Dependency- oder Environmentänderung. | Keine **ungeplante** Änderung. Geplante Toolchain-/Dependencyänderungen brauchen Scope, Primärquellenprüfung, Lockfile, Tests und passende Freigabe. |
 | Web-/Mobile-Zugriff über einen gemeinsam eingebetteten API-Key. | Native Apps sind öffentliche Clients. Keine eingebetteten Client-Secrets; nutzerbezogene Auth sicher und serverseitig autorisiert. |
 | Starre Tool- und Versionsvorgaben gelten projektübergreifend. | Stack und Versionen werden pro Projekt per ADR/Lock festgelegt und bei Upgrades anhand aktueller Primärquellen geprüft. |
+| Commit-Nachrichten auf Englisch. | Conventional-Commits-**Typ** englisch, Commit-**Betreff in der Projektsprache**, Umlaute ASCII-transliteriert. Die Schrift wird an der gelebten Praxis korrigiert, nicht die Praxis an der Schrift (1.4, 2.7). |
 
 ### 2.3 Neue Erweiterungen in Version 3.0
 
@@ -176,6 +178,15 @@ Die folgenden Prinzipien bleiben vollständig erhalten:
 - **Anlass:** Recherche-Sweep 2026-07 (Gesamtsynthese v2, Addenda, Dossiers, Portfolio-Analyse), konsolidiert im Tranche-1-Referenzmodell; die elf Eigentümerentscheidungen OE-1 bis OE-11 vom 2026-07-28 (`ENTSCHEIDUNGSPROTOKOLL_OE.md`) sind als verbindliche Werte eingearbeitet — u. a. M2-unattended-Regel in WSL2 (OE-1), deterministische Boxscore-Promotion (OE-2), EliteDesk als neues Produktionsziel (OE-3), WIP-Limit 2 (OE-6), Autonomie-Startwerte (OE-7), Kostenrahmen (OE-8), AGENTS.md-Umstellung (OE-10) und A3-Vorabfreigaben (OE-11).
 - **Prüfnachweis:** Referenzmodell aus drei konkurrierenden Entwürfen mit zwei unabhängigen Gutachten (J1 Praxis, J2 Evidenz) konsolidiert; die Einarbeitung in diese Fassung wurde im selben Lauf durch ein unabhängiges Review gegen Delta-Tabelle und Entscheidungsprotokoll geprüft. Zeitabhängige Angaben tragen den Stand 2026-07-28.
 - **Review-/Sunset-Kriterium:** Die Startwerte aus OE-1, OE-7 und OE-8 werden nach dem ersten Quartal Betriebserfahrung mit Eval-Evidenz kalibriert (9.8, 27.7); die MCP-Angaben in 23.3 folgen dem dort definierten Umstellungstrigger; ein v5-Neuschnitt entlang des Lifecycle-Denkmodells wird frühestens nach zwei Quartalen Betrieb aus dem Referenzmodell geschnitten (Redaktionsentscheid, vormals offene Frage E10).
+
+### 2.7 Änderungen nach Betriebserfahrung (Stand 2026-08-09)
+
+- **Scope:** In-place-Korrektur der Commit-Sprachregel in 1.4 samt Zeile in der Korrekturtabelle 2.2; Nachzug in `AGENTS.md` Abschnitt 1 und im Repo-README („Konventionen"). Zusätzlich der Verweissatz in 1.1 auf die neue Achse `FACHMETHODIK.md` (Fachmethodiken gelten zusätzlich zur gewählten Projektmethodik). Keine Umnummerierung, keine weitere Regeländerung.
+- **Anlass:** Die geschriebene Regel „Commit-Nachrichten auf Englisch" wird im Portfolio nicht gelebt. Bei zwei Projekten gegen eine Zeile Schrift ist die Schrift falsch, nicht die Praxis — Eigentümerentscheidung vom 2026-08-09. Vorbefund aus dem Methodik-Abgleich des Projekts `bismarck` (`doku/methodik-abgleich.md` Abschnitt 1.5 und 8, Rückmeldung R1, Commit `9461933`).
+- **Prüfnachweis:** Am 2026-08-09 über `git log --format=%s` gezählt: `blitz` 89 von 90 Commits mit englischem Conventional-Commits-Typ und deutschem, ASCII-transliteriertem Betreff — der einzige englische ist der Bootstrap-Commit des Starterkits; `bismarck` 11 von 11.
+- **Nicht nachgezogen:** `input/CLAUDE.md` Zeile 14 trägt weiterhin die alte Fassung. `input/` ist der archivierte Ausgangskorpus (Stand v4.0) und wird nicht rückwirkend verändert; das Repo-README verweist für die geltende Fassung jetzt auf 1.4 statt auf `input/CLAUDE.md`.
+- **Review-/Sunset-Kriterium:** Erneut zu entscheiden, sobald ein Projekt mit englischer Projektsprache oder mit externen Mitwirkenden entsteht — „Projektsprache" trägt dort eine andere Antwort. Die Transliterationspflicht entfällt, wenn die Werkzeugkette nicht mehr über Windows PowerShell 5.1 läuft.
+- **Versionsstand:** Die Dokumentversion bleibt **4.1**. Ob eine korrigierte kanonische Regel einen Bump auf 4.2 verlangt, ist eine offene Eigentümerentscheidung; ein Bump zöge die Versionsangaben in Repo-README, `AGENTS.md`, `METHODIK_FASTTRACK.md`, `FACHMETHODIK.md` und `infrastruktur/HOME-SRV01_STATUS.md` nach sich.
 
 ---
 

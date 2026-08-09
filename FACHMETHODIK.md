@@ -72,15 +72,17 @@ Jedes Kapitel einer Fachmethodik trägt einen Reifegrad. Er wird im README der j
 | Stufe | Bedeutung | Bedingung für den Aufstieg |
 |---|---|---|
 | **geplant** | benannt, nicht geschrieben | — |
-| **Entwurf** | im Projekt geschrieben, noch nicht am Material angewandt | wird an realem Material angewandt |
-| **erprobt** | angewandt, mit **genannter Fallzahl** und Datum | mindestens einmal unter Korrekturdruck geändert und danach stabil geblieben |
+| **Entwurf** | im Projekt geschrieben, noch nicht oder nur an einer Stichprobe angewandt | vollständige Anwendung auf die Grundgesamtheit |
+| **erprobt** | auf die **volle Grundgesamtheit** angewandt, mit genannter **Fall- und Fehlerzahl** und Datum | mindestens einmal unter Korrekturdruck geändert und danach stabil geblieben |
 | **bewährt** | in zwei Projekten oder über zwei Aufträge hinweg stabil | — |
 
 Drei Regeln dazu — sie sind der Punkt der Übung:
 
 **Nur `bewährt` wird kopiert.** Kapitel im Reifegrad `Entwurf` oder `erprobt` stehen in der Fachmethodik **als Verweis auf das Projektdokument**, nicht als Kopie. Solange eine Regel sich noch ändert, darf sie nur an einer Stelle stehen. Der Verweis lautet auf **Repo, Pfad und Commit**, nicht nur auf den Dateinamen — ein Dateiname belegt nichts, wenn die Datei sich seit dem Verweis dreimal geändert hat.
 
-**Der Aufstieg von `Entwurf` zu `erprobt` verlangt eine Zahl.** „Hat sich bewährt" ist keine Evidenz. „Auf 280 Titel angewandt, 61 Fälle auf der Nacharbeitsliste, 4 Regeländerungen" ist eine. Ohne Zahl kein Aufstieg. Das ist derselbe Unterschied wie zwischen `behauptet` und `getestet` in den Statusdateien (`METHODIK_FASTTRACK.md` Kap. 3 Nr. 5).
+**Der Aufstieg von `Entwurf` zu `erprobt` verlangt nicht nur eine Fallzahl, sondern die vollständige Anwendung auf die Grundgesamtheit, die das Kapitel zu regeln beansprucht — mit genannter Fehlerzahl.** Eine Regel, die auf eine Stichprobe angewandt wurde, ist **geprüft**, nicht **erprobt**. Stichprobe und Grundgesamtheit sind zwei verschiedene Evidenzstufen. „Hat sich bewährt" ist keine Evidenz; „auf 280 Titel angewandt, 61 Fälle auf der Nacharbeitsliste, 4 Regeländerungen" ist eine. Ohne Zahl kein Aufstieg — ohne Grundgesamtheit auch nicht. Das ist derselbe Unterschied wie zwischen `behauptet` und `getestet` in den Statusdateien (`METHODIK_FASTTRACK.md` Kap. 3 Nr. 5).
+
+*Warum die Grundgesamtheit und nicht die Stichprobe:* Eine Stichprobe trifft die häufigen Fälle und verfehlt die seltenen — 25 von rund 340 Zeilen erreichen eine Formklasse mit vier bis sechs Vorkommen rechnerisch nicht, und genau dort bricht eine Regel. Der Befund, aus dem diese Klausel stammt, steht im Projekt: Die Mehrzahl der Regelbrüche an `id-vergabe` v0.1 kam **nach** der Stichprobe, aus Klasseninventar und vollständiger Durchsicht (`bismarck` · `doku/methodik/id-vergabe.md` Abschnitt 8 · Commit `9461933`).
 
 **Ein Kapitel, das zwei Aufträge lang `Entwurf` bleibt, wird entweder erprobt oder gestrichen.** Anti-Drift nach demselben Muster wie der Promotion-Pfad für N-Regeln in Methodik 26.8: Eine Regel ohne Mechanismus darf nicht wie eine Regel aussehen. Ein Kapitel ohne Anwendung auch nicht.
 

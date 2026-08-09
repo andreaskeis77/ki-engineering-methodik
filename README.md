@@ -84,7 +84,7 @@ recherche/              Ergebnisse des Forschungsprogramms vom 28.07.2026
 
 ## Konventionen
 
-Dokumentation deutsch, Commits englisch (gemäß `input/CLAUDE.md`). Quellenstatus **[V]** = Primärquelle selbst abgerufen und geprüft (mit Abrufdatum), **[S]** = über Suchergebnisse belegt. Bewertungsskala je Methode/Technologie: jetzt empfohlen · sinnvoll unter Bedingungen · pilotgeeignet · beobachten · überdimensioniert · nicht belastbar · überwiegend Marketing.
+Dokumentation deutsch. Commits: Conventional-Commits-Typ englisch, Betreff in der Projektsprache (hier deutsch), Umlaute ASCII-transliteriert — maßgeblich ist `methodik/KI_ENGINEERING_METHODIK.md` 1.4 (korrigiert am 2026-08-09, Begründung in 2.7); das archivierte `input/CLAUDE.md` trägt noch die ältere Fassung „Commits englisch" und wird als Ausgangskorpus nicht nachgezogen. Quellenstatus **[V]** = Primärquelle selbst abgerufen und geprüft (mit Abrufdatum), **[S]** = über Suchergebnisse belegt. Bewertungsskala je Methode/Technologie: jetzt empfohlen · sinnvoll unter Bedingungen · pilotgeeignet · beobachten · überdimensioniert · nicht belastbar · überwiegend Marketing.
 
 ## Provenance
 

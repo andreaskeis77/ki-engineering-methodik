@@ -11,12 +11,12 @@ Wie arbeitet man mit Quellen: Kataloge und Normdaten, Werk gegen Ausgabe, Zitier
 
 ## 1. Kapitelgerüst
 
-Die Spalte **Fälle** ist die wichtigste: an wie vielen realen Einzelfällen die Regel angewandt worden ist. Eine Regel mit „—" ist eine Behauptung, eine Regel mit „280" ein Befund — derselbe Unterschied wie zwischen `behauptet` und `getestet` in den Statusdateien.
+Die Spalte **Fälle** ist die wichtigste: an wie vielen realen Einzelfällen die Regel angewandt worden ist. Eine Regel mit „—" ist eine Behauptung, eine Regel mit „280" ein Befund — derselbe Unterschied wie zwischen `behauptet` und `getestet` in den Statusdateien. Die Spalte nennt zusätzlich, **ob es eine Stichprobe oder die Grundgesamtheit war**: Für den Aufstieg zu `erprobt` zählt nur die Grundgesamtheit, eine Stichprobe macht eine Regel `geprüft` (`FACHMETHODIK.md` Abschnitt 5).
 
 | Kapitel | Reifegrad | Herkunft | Fälle | Stand | Nächster fälliger Schritt |
 |---|---|---|---|---|---|
-| `id-vergabe` | Entwurf | bismarck | 25 | 2026-08-09 | Aufstieg zu *erprobt* nach dem Massenlauf in Auftrag 02, Fallzahl aus der Bilanz |
-| `erfassungsregeln` | Entwurf | bismarck | 25 | 2026-08-09 | Aufstieg zu *erprobt* nach dem Massenlauf in Auftrag 02, Fallzahl aus der Bilanz |
+| `id-vergabe` | Entwurf | bismarck | 25 (Stichprobe von ~340) | 2026-08-09 | Massenlauf Auftrag 02: vollständige Anwendung auf die Grundgesamtheit, danach Aufstieg zu *erprobt* mit Fall- **und Fehlerzahl** |
+| `erfassungsregeln` | Entwurf | bismarck | 25 (Stichprobe von ~340) | 2026-08-09 | Massenlauf Auftrag 02: vollständige Anwendung auf die Grundgesamtheit, danach Aufstieg zu *erprobt* mit Fall- **und Fehlerzahl** |
 | `verifikationsregeln` | geplant | bismarck, Auftrag 04 | — | — | Entwurf im Projekt schreiben, wenn der erste Abgleich gegen einen Katalog läuft |
 | `quellenkritik` | geplant | bismarck | — | — | Entwurf im Projekt schreiben, sobald der erste Datensatz einer Quellenedition entsteht |
 | `belegregeln` | geplant | bismarck, Auftrag 03 | — | — | Entwurf im Projekt schreiben, wenn die erste Kernaussage belegt wird |
@@ -67,12 +67,12 @@ Die Aufarbeitung dieser Deckungen steht im Methodik-Abgleich (`bismarck` · `dok
 
 Der Grund für die Trennung ist nicht Sparsamkeit: Zwei Fassungen derselben Regel driften, und man merkt es an der Stelle, an der man sich auf sie verlässt — dieselbe Überlegung, aus der OE-10 `CLAUDE.md` zur Brücke gemacht hat (Methodik 26.9).
 
-## 4. Offene Punkte
+## 4. Punkte und ihre Entscheidung
 
-| # | Punkt | Gehört wohin |
+| # | Punkt | Entscheidung (2026-08-09) |
 |---|---|---|
-| Q1 | **Reifegrad `id-vergabe` und `erfassungsregeln`.** Beide sind nach dem Wortlaut der Reifegradregel bereits `erprobt`: an 25 geschichteten Einträgen angewandt, mit Datum, unter Korrekturdruck geändert. Beide Projektdokumente führen sich selbst weiter als `Entwurf` und behalten sich den Massenlauf vor. Diese Tabelle folgt der Selbstauskunft des Projekts. **Der Aufstieg ist eine offene Eigentümerentscheidung**, fällig mit der Bilanz aus Auftrag 02 | hier, beim nächsten Stand der Tabelle |
-| Q2 | **Commit-Betreff deutsch.** `README.md` und `input/CLAUDE.md` schreiben Commit-Nachrichten englisch vor (Methodik 1.4). Zwei Projekte des Portfolios leben es anders: englischer Conventional-Commits-Typ, deutscher Betreff, ASCII-transliteriert. Zwei Projekte gegen eine Zeile Schrift ist ein Befund, keine Nachlässigkeit | **nicht hierher** — Portfolio-Befund für `methodik/KI_ENGINEERING_METHODIK.md` Abschnitt 1.4. In diesem Auftrag bewusst nicht angefasst |
+| Q1 | **Reifegrad `id-vergabe` und `erfassungsregeln`.** Beide waren nach dem damaligen Wortlaut der Reifegradregel bereits `erprobt`: an 25 geschichteten Einträgen angewandt, mit Datum, unter Korrekturdruck geändert. Beide Projektdokumente führten sich selbst weiter als `Entwurf` | **entschieden: beide bleiben `Entwurf`.** Der Widerspruch lag in der Regel, nicht in den Dokumenten — 25 Einträge sind eine Stichprobe, keine Grundgesamtheit. `FACHMETHODIK.md` Abschnitt 5 trägt seither die fehlende Klausel. Nächster fälliger Schritt ist damit der **Massenlauf**, keine Eigentümerentscheidung |
+| Q2 | **Commit-Betreff deutsch.** Die Schrift verlangte Commit-Nachrichten englisch (Methodik 1.4, `AGENTS.md` Abschnitt 1, Repo-README); zwei Projekte des Portfolios leben englischen Conventional-Commits-Typ mit deutschem, ASCII-transliteriertem Betreff | **entschieden: die Schrift war falsch, nicht die Praxis.** Methodik 1.4 ist korrigiert, Nachzug in `AGENTS.md` und Repo-README, Changelog-Eintrag in Methodik 2.2 und 2.7. Damit ist der Punkt aus der Fachmethodik heraus und dort, wo er hingehört |
 
 ## 5. Pflege
 

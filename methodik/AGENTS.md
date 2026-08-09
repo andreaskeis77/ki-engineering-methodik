@@ -8,7 +8,7 @@
 
 Diese Datei enthält nur Regeln und Fakten, die jeder eingesetzte Coding-Agent (Claude Code als Primäragent, Zweitagenten zur Quervalidierung) in jeder Sitzung kennen muss. Die Begründungen, Auswahlverfahren, Checklisten und Vorlagen stehen in `KI_ENGINEERING_METHODIK.md`. Diese Langfassung hier **nicht** mit `@` importieren; sie wird nur aufgabenbezogen gelesen.
 
-- Dokumentation und Kommunikation: Deutsch; Code, Identifier, Branches und Commits: Englisch.
+- Dokumentation und Kommunikation: Deutsch; Code, Identifier und Branches: Englisch. Commit-Nachrichten: Typ englisch, Betreff in der Projektsprache (hier Deutsch), Umlaute ASCII-transliteriert (Methodik 1.4).
 - Projektspezifische Entscheidungen werden in versionierten ADRs festgehalten.
 - Zeitabhängige Tool-, Modell-, SDK- und Store-Regeln vor Scaffold, Upgrade und Release anhand offizieller Primärquellen prüfen.
 - Verbindlichkeit (Methodik 26.8): Regeln ohne Marker sind **N** (normativ); **E**-Regeln tragen `(E: Mechanismus)` und sind zusätzlich technisch durchgesetzt; **(I)** markiert Informatives ohne Regelcharakter.
